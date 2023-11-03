@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
     
     ArrayList<String> palabrasPosibles =new ArrayList();
+    
     public JuegoAhorcadoAzar(ArrayList palabrasSecretas){
         palabrasPosibles = palabrasSecretas;
         seleccionarPalabraAzar();
