@@ -12,13 +12,13 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
     private Random random = new Random();
 
     //palabrasPosibles es como palabraSecreta de la otra clase
-    public JuegoAhorcadoAzar(ArrayList palabrasPosibles) {
-        this.palabrasPosibles = palabrasPosibles;
+    public JuegoAhorcadoAzar(ArrayList palabrasSecretas) {
+        palabrasPosibles = palabrasSecretas;
         seleccionarPalabraRandom();
         inicializarPalabraSecreta();
 //        this.palabraSecreta = seleccionarPalabraAleatoria();
 //        this.palabraActual = "_".repeat(palabraSecreta.length());
-        this.intentos = 6; // Por ejemplo, 6 intentos disponibles
+        intentos = 6; // Por ejemplo, 6 intentos disponibles
     }
 
     public void inicializarPalabraSecreta() {
@@ -29,9 +29,9 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
     }
 
     public void jugar() {
-        if(palabrasPosibles==null){
-            System.out.println("Lista vacia");
-        }else{
+//        if(palabrasPosibles==null){
+//            System.out.println("Lista vacia");
+//        }else{
         while (intentos > 0) {
             String palabradeshebrada = "";
             for (int i = 0; i < palabraActual.length(); i++) {
@@ -51,11 +51,12 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
                 JOptionPane.showMessageDialog(null, "Oh no... perdiste...");
             }
         }
-        }
+//        }
     }
     
 //antes era String
     private void seleccionarPalabraRandom() {
+        Random random = new Random();
         int indice = random.nextInt(palabrasPosibles.size());
         //return palabrasPosibles.get(indice);
         palabraSecreta = palabrasPosibles.get(indice).toUpperCase();

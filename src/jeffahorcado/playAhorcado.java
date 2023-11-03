@@ -1,31 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package jeffahorcado;
 
-/**
- *
- * @author aleja
- */
+import javax.swing.JOptionPane;
+import static jeffahorcado.FramePalabraFija.palabraDef;
+
 public class playAhorcado extends javax.swing.JFrame {
 
-    /**
-     * Creates new form playAhorcado
-     */
-    
     private JuegoAhorcadoAzar juegoAhorcadoAzar;
     private JuegoAhorcadoFijo AhorcadoFijoJuego;
-    
+    public static String palabraDef;
+
     public playAhorcado() {
-        
+
         initComponents();
-        
-        
-     PanePalabraAzar.setVisible(false);
-     PanelAhorcadoFijo.setVisible(false);
-     PanelPalabraFija.setVisible(false);
-     PanelahorcadoAzar.setVisible(false);
+        setLocationRelativeTo(null);
+
+        PanePalabraAzar.setVisible(false);
+        PanelAhorcadoFijo.setVisible(false);
+        PanelPalabraFija.setVisible(false);
+        PanelahorcadoAzar.setVisible(false);
     }
 
     /**
@@ -44,10 +36,10 @@ public class playAhorcado extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         PanelPalabraFija = new javax.swing.JPanel();
-        guardarfijo1 = new javax.swing.JButton();
+        GuardarFijo = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        palabraingresadafija3 = new javax.swing.JTextField();
+        PalabraFijaNueva = new javax.swing.JTextField();
         PanelahorcadoAzar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,19 +47,20 @@ public class playAhorcado extends javax.swing.JFrame {
         buscarcaracterazar1 = new javax.swing.JButton();
         PanelAhorcadoFijo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        palabraingresadaazar = new javax.swing.JTextField();
+        IngresadoFijo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        buscarcaracterFijo = new javax.swing.JButton();
+        BuscarCaracterFijo = new javax.swing.JButton();
         PanePalabraAzar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        palabraingresadafija1 = new javax.swing.JTextField();
-        guardarfijo = new javax.swing.JButton();
+        NuevaAzar = new javax.swing.JTextField();
+        GuardarNuevaAzar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(java.awt.SystemColor.activeCaptionBorder);
+        setBackground(new java.awt.Color(0, 102, 153));
 
-        AhorcadoFijo.setBackground(new java.awt.Color(204, 204, 204));
+        AhorcadoFijo.setBackground(new java.awt.Color(0, 102, 153));
         AhorcadoFijo.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         AhorcadoFijo.setForeground(java.awt.Color.white);
         AhorcadoFijo.setText("Jugar Ahorcado Fijo");
@@ -77,17 +70,17 @@ public class playAhorcado extends javax.swing.JFrame {
             }
         });
 
-        InicializarPalabras.setBackground(new java.awt.Color(204, 204, 204));
+        InicializarPalabras.setBackground(new java.awt.Color(0, 102, 153));
         InicializarPalabras.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         InicializarPalabras.setForeground(java.awt.Color.white);
-        InicializarPalabras.setText("Inicializar Palabras");
+        InicializarPalabras.setText("Agregar Palabra Fija");
         InicializarPalabras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InicializarPalabrasActionPerformed(evt);
             }
         });
 
-        agregarpalabrasAzar.setBackground(new java.awt.Color(204, 204, 204));
+        agregarpalabrasAzar.setBackground(new java.awt.Color(0, 102, 153));
         agregarpalabrasAzar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         agregarpalabrasAzar.setForeground(java.awt.Color.white);
         agregarpalabrasAzar.setText("Agregar palabras para modo azar");
@@ -97,7 +90,7 @@ public class playAhorcado extends javax.swing.JFrame {
             }
         });
 
-        JugarAhorcadoAlAzar.setBackground(new java.awt.Color(204, 204, 204));
+        JugarAhorcadoAlAzar.setBackground(new java.awt.Color(0, 102, 153));
         JugarAhorcadoAlAzar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         JugarAhorcadoAlAzar.setForeground(java.awt.Color.white);
         JugarAhorcadoAlAzar.setText("Jugar Ahorcado al Azar");
@@ -107,7 +100,7 @@ public class playAhorcado extends javax.swing.JFrame {
             }
         });
 
-        salir.setBackground(new java.awt.Color(204, 204, 204));
+        salir.setBackground(new java.awt.Color(0, 102, 153));
         salir.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         salir.setForeground(java.awt.Color.white);
         salir.setText("Salir");
@@ -117,7 +110,17 @@ public class playAhorcado extends javax.swing.JFrame {
             }
         });
 
-        guardarfijo1.setText("Guardar");
+        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        PanelPalabraFija.setBackground(new java.awt.Color(0, 102, 153));
+
+        GuardarFijo.setText("Guardar");
+        GuardarFijo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarFijoActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +130,11 @@ public class playAhorcado extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Ingrese una palabra");
 
-        palabraingresadafija3.setText("avion");
+        PalabraFijaNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PalabraFijaNuevaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelPalabraFijaLayout = new javax.swing.GroupLayout(PanelPalabraFija);
         PanelPalabraFija.setLayout(PanelPalabraFijaLayout);
@@ -135,12 +142,13 @@ public class playAhorcado extends javax.swing.JFrame {
             PanelPalabraFijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPalabraFijaLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
-                .addGroup(PanelPalabraFijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPalabraFijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(palabraingresadafija3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(guardarfijo1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelPalabraFijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PalabraFijaNueva)
+                    .addGroup(PanelPalabraFijaLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(GuardarFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         PanelPalabraFijaLayout.setVerticalGroup(
@@ -148,14 +156,16 @@ public class playAhorcado extends javax.swing.JFrame {
             .addGroup(PanelPalabraFijaLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(palabraingresadafija3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(guardarfijo1)
-                .addContainerGap(341, Short.MAX_VALUE))
+                .addComponent(PalabraFijaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(GuardarFijo)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
+
+        PanelahorcadoAzar.setBackground(new java.awt.Color(0, 102, 153));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,8 +174,6 @@ public class playAhorcado extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese un caracter a adivinar");
-
-        palabraingresadafija.setText("a");
 
         buscarcaracterazar1.setText("buscar");
         buscarcaracterazar1.addActionListener(new java.awt.event.ActionListener() {
@@ -199,25 +207,24 @@ public class playAhorcado extends javax.swing.JFrame {
                 .addComponent(palabraingresadafija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buscarcaracterazar1)
-                .addContainerGap(341, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
+        PanelAhorcadoFijo.setBackground(new java.awt.Color(0, 102, 153));
         PanelAhorcadoFijo.setPreferredSize(new java.awt.Dimension(486, 563));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ahorcado Fijo");
-
-        palabraingresadaazar.setText("a");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese un caracter a adivinar");
 
-        buscarcaracterFijo.setText("buscar");
-        buscarcaracterFijo.addActionListener(new java.awt.event.ActionListener() {
+        BuscarCaracterFijo.setText("buscar");
+        BuscarCaracterFijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarcaracterFijoActionPerformed(evt);
+                BuscarCaracterFijoActionPerformed(evt);
             }
         });
 
@@ -226,29 +233,29 @@ public class playAhorcado extends javax.swing.JFrame {
         PanelAhorcadoFijoLayout.setHorizontalGroup(
             PanelAhorcadoFijoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAhorcadoFijoLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(PanelAhorcadoFijoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelAhorcadoFijoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(palabraingresadaazar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buscarcaracterFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addGap(97, 97, 97)
+                .addGroup(PanelAhorcadoFijoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarCaracterFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IngresadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         PanelAhorcadoFijoLayout.setVerticalGroup(
             PanelAhorcadoFijoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAhorcadoFijoLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(66, 66, 66)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(palabraingresadaazar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buscarcaracterFijo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(IngresadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BuscarCaracterFijo)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
+        PanePalabraAzar.setBackground(new java.awt.Color(0, 102, 153));
         PanePalabraAzar.setPreferredSize(new java.awt.Dimension(489, 563));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -259,12 +266,10 @@ public class playAhorcado extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Ingrese una palabra");
 
-        palabraingresadafija1.setText("avion");
-
-        guardarfijo.setText("Guardar");
-        guardarfijo.addActionListener(new java.awt.event.ActionListener() {
+        GuardarNuevaAzar.setText("Guardar");
+        GuardarNuevaAzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guardarfijoActionPerformed(evt);
+                GuardarNuevaAzarActionPerformed(evt);
             }
         });
 
@@ -278,8 +283,8 @@ public class playAhorcado extends javax.swing.JFrame {
                     .addGroup(PanePalabraAzarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(palabraingresadafija1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(guardarfijo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NuevaAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GuardarNuevaAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         PanePalabraAzarLayout.setVerticalGroup(
@@ -290,37 +295,37 @@ public class playAhorcado extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(palabraingresadafija1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NuevaAzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(guardarfijo)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addComponent(GuardarNuevaAzar)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(14, Short.MAX_VALUE)
                     .addComponent(PanelPalabraFija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(15, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelahorcadoAzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(12, Short.MAX_VALUE)
                     .addComponent(PanelAhorcadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(12, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanePalabraAzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,24 +333,27 @@ public class playAhorcado extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelPalabraFija, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(PanelPalabraFija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(291, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelahorcadoAzar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(PanelahorcadoAzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(274, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelAhorcadoFijo, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(PanelAhorcadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(248, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(PanePalabraAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanePalabraAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(271, Short.MAX_VALUE)))
         );
+
+        jLabel7.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 0, 80)); // NOI18N
+        jLabel7.setText("AHORCADO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -353,45 +361,56 @@ public class playAhorcado extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel7)
                     .addComponent(AhorcadoFijo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(InicializarPalabras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(agregarpalabrasAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(JugarAhorcadoAlAzar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(agregarpalabrasAzar)
                     .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AhorcadoFijo, InicializarPalabras, JugarAhorcadoAlAzar, agregarpalabrasAzar, salir});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(AhorcadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(InicializarPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(agregarpalabrasAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JugarAhorcadoAlAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(salir)
-                .addContainerGap(559, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(220, 220, 220))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AhorcadoFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(InicializarPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JugarAhorcadoAlAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(agregarpalabrasAzar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(salir)))
+                .addGap(157, 157, 157))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AhorcadoFijo, InicializarPalabras, JugarAhorcadoAlAzar, agregarpalabrasAzar, salir});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void AhorcadoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AhorcadoFijoActionPerformed
-//       
-        PanePalabraAzar.setVisible(false);
-        PanelAhorcadoFijo.setVisible(true);
-        PanelPalabraFija.setVisible(false);
-        PanelahorcadoAzar.setVisible(false);
+        System.out.println(palabraDef);
+        AhorcadoFijoJuego = new JuegoAhorcadoFijo(palabraDef);
+        AhorcadoFijoJuego.jugar();
+//        PanePalabraAzar.setVisible(false);
+//        PanelAhorcadoFijo.setVisible(true);
+//        PanelPalabraFija.setVisible(false);
+//        PanelahorcadoAzar.setVisible(false);
     }//GEN-LAST:event_AhorcadoFijoActionPerformed
 
     private void InicializarPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicializarPalabrasActionPerformed
@@ -415,40 +434,49 @@ public class playAhorcado extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarpalabrasAzarActionPerformed
 
     private void JugarAhorcadoAlAzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugarAhorcadoAlAzarActionPerformed
-//        JuegoAhorcadoAzar juegoAhorcadoAzar = new JuegoAhorcadoAzar(AdminPalabrasSecretas.getpalabrasSecretas());
-//        juegoAhorcadoAzar.jugar();
-//        System.out.println(AdminPalabrasSecretas.getpalabrasSecretas());
-        PanePalabraAzar.setVisible(false);
-        PanelAhorcadoFijo.setVisible(false);
-        PanelPalabraFija.setVisible(false);
-        PanelahorcadoAzar.setVisible(true);
+//        PanePalabraAzar.setVisible(false);
+//        PanelAhorcadoFijo.setVisible(false);
+//        PanelPalabraFija.setVisible(false);
+//        PanelahorcadoAzar.setVisible(true);
+        JuegoAhorcadoAzar juegoAhorcadoAzar = new JuegoAhorcadoAzar(AdminPalabrasSecretas.getpalabrasSecretas());
+        juegoAhorcadoAzar.jugar();
+        System.out.println(AdminPalabrasSecretas.getpalabrasSecretas());
     }//GEN-LAST:event_JugarAhorcadoAlAzarActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
 
-    private void buscarcaracterFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcaracterFijoActionPerformed
-        // TODO add your handling code here:
-        palabraingresadafija.getText();
-        AhorcadoFijoJuego= new JuegoAhorcadoFijo(FramePalabraFija.palabraDef);
-        AhorcadoFijoJuego.jugar();
-        
-        
-    }//GEN-LAST:event_buscarcaracterFijoActionPerformed
+    private void BuscarCaracterFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarCaracterFijoActionPerformed
+
+    }//GEN-LAST:event_BuscarCaracterFijoActionPerformed
 
     private void buscarcaracterazar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcaracterazar1ActionPerformed
         // TODO add your handling code here:
-        palabraingresadaazar.getText();
-        juegoAhorcadoAzar = new JuegoAhorcadoAzar(AdminPalabrasSecretas.getpalabrasSecretas());
-        juegoAhorcadoAzar.jugar();
-        System.out.println(AdminPalabrasSecretas.getpalabrasSecretas());
+//        palabraingresadaazar.getText();
+//        juegoAhorcadoAzar = new JuegoAhorcadoAzar(AdminPalabrasSecretas.getpalabrasSecretas());
+//        juegoAhorcadoAzar.jugar();
+//        System.out.println(AdminPalabrasSecretas.getpalabrasSecretas());
 
     }//GEN-LAST:event_buscarcaracterazar1ActionPerformed
 
-    private void guardarfijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarfijoActionPerformed
+    private void GuardarNuevaAzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarNuevaAzarActionPerformed
+        String palabra = NuevaAzar.getText();
+        AdminPalabrasSecretas adminPalabrasSecretas = new AdminPalabrasSecretas();
+        adminPalabrasSecretas.agregarPalabra(palabra.toUpperCase());
+        JOptionPane.showMessageDialog(null, "La palabra se ha establecido correctamente.  ");
+    }//GEN-LAST:event_GuardarNuevaAzarActionPerformed
+
+    private void PalabraFijaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PalabraFijaNuevaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_guardarfijoActionPerformed
+    }//GEN-LAST:event_PalabraFijaNuevaActionPerformed
+
+    private void GuardarFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarFijoActionPerformed
+        String palabra = PalabraFijaNueva.getText();
+        palabraDef = palabra;
+        System.out.println(palabraDef);
+        JOptionPane.showMessageDialog(null, "La palabra se ha establecido correctamente.  ");
+    }//GEN-LAST:event_GuardarFijoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -490,17 +518,20 @@ public class playAhorcado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AhorcadoFijo;
+    private javax.swing.JButton BuscarCaracterFijo;
+    private javax.swing.JButton GuardarFijo;
+    private javax.swing.JButton GuardarNuevaAzar;
+    private javax.swing.JTextField IngresadoFijo;
     private javax.swing.JButton InicializarPalabras;
     private javax.swing.JButton JugarAhorcadoAlAzar;
+    private javax.swing.JTextField NuevaAzar;
+    private javax.swing.JTextField PalabraFijaNueva;
     private javax.swing.JPanel PanePalabraAzar;
     private javax.swing.JPanel PanelAhorcadoFijo;
     private javax.swing.JPanel PanelPalabraFija;
     private javax.swing.JPanel PanelahorcadoAzar;
     private javax.swing.JButton agregarpalabrasAzar;
-    private javax.swing.JButton buscarcaracterFijo;
     private javax.swing.JButton buscarcaracterazar1;
-    private javax.swing.JButton guardarfijo;
-    private javax.swing.JButton guardarfijo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -508,12 +539,10 @@ public class playAhorcado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField palabraingresadaazar;
     private javax.swing.JTextField palabraingresadafija;
-    private javax.swing.JTextField palabraingresadafija1;
-    private javax.swing.JTextField palabraingresadafija3;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,15 +17,15 @@ public class AdminPalabrasSecretas {
         palabrasSecretas.add(palabra);
     }
 
-    public String seleccionarPalabraAzar() {
-        if (palabrasSecretas.isEmpty()) {
-            System.out.println("No hay palabras secretas disponibles.");
-            return "";
-        }
-        Random random = new Random();
-        int indice = random.nextInt(palabrasSecretas.size());
-        return palabrasSecretas.get(indice);
-    }
+//    public String seleccionarPalabraAzar() {
+//        if (palabrasSecretas.isEmpty()) {
+//            System.out.println("No hay palabras secretas disponibles.");
+//            return "";
+//        }
+//        Random random = new Random();
+//        int indice = random.nextInt(palabrasSecretas.size());
+//        return palabrasSecretas.get(indice);
+//    }
     public static ArrayList getpalabrasSecretas(){
         return palabrasSecretas;
     }

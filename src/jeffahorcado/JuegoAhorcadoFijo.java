@@ -22,6 +22,7 @@ class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
     }
 
     public void jugar() {
+        System.out.println(palabraSecreta);
         while (intentos > 0) {
             String palabradeshebrada = "";
             for (int i = 0; i < palabraActual.length(); i++) {
@@ -31,7 +32,7 @@ class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
             do {
                 prueba = JOptionPane.showInputDialog(null, "Ingrese la letra que desea probar\nPista: " + palabradeshebrada + "\nIntentos restantes: " + intentos, "Ahorcado Fijo", JOptionPane.INFORMATION_MESSAGE);
             } while (prueba == null);
-            prueba = prueba.toUpperCase();
+            prueba = prueba.toLowerCase();
             if (!prueba.equals("")) {
                 char letra = prueba.charAt(0);
                 actualizarPalabraActual(letra);
