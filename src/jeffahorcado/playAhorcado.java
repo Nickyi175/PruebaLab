@@ -13,8 +13,15 @@ public class playAhorcado extends javax.swing.JFrame {
     /**
      * Creates new form playAhorcado
      */
+    
+    private JuegoAhorcadoAzar juegoAhorcadoAzar;
+    private JuegoAhorcadoFijo AhorcadoFijoJuego;
+    
     public playAhorcado() {
+        
         initComponents();
+        
+        
      PanePalabraAzar.setVisible(false);
      PanelAhorcadoFijo.setVisible(false);
      PanelPalabraFija.setVisible(false);
