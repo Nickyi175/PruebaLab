@@ -1,4 +1,4 @@
-package jeffahorcado;
+package Ahorcado;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -33,16 +33,16 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
 //            System.out.println("Lista vacia");
 //        }else{
         while (intentos > 0) {
-            String palabradeshebrada = "";
+            String lineas = "";
             for (int i = 0; i < palabraActual.length(); i++) {
-                palabradeshebrada += palabraActual.charAt(i) + " ";
+                lineas += palabraActual.charAt(i) + " ";
             }
-            String prueba = null;
+            String caracter = null;
             do {
-                prueba = JOptionPane.showInputDialog(null, "Ingrese la letra que desea probar\nPista: " + palabradeshebrada + "\nIntentos restantes: " + intentos, "Ahorcado Fijo", JOptionPane.INFORMATION_MESSAGE);
-            } while (prueba == null);
-            prueba = prueba.toUpperCase();
-            char letra = prueba.charAt(0);
+                caracter = JOptionPane.showInputDialog(null, "Ingrese un caracter\nCantidad de caracteres" + lineas + "\nIntentos restantes: " + intentos, "AHORCADO AL AZAR", JOptionPane.INFORMATION_MESSAGE);
+            } while (caracter == null);
+            caracter = caracter.toUpperCase();
+            char letra = caracter.charAt(0);
             actualizarPalabraActual(letra);
             if (hasGanado() == true && intentos > 0) {
                 JOptionPane.showMessageDialog(null, "¡FELICIDADES, HAS GANADO!");

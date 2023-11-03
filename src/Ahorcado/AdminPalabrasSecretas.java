@@ -1,4 +1,4 @@
-package jeffahorcado;
+package Ahorcado;
 
 import java.util.ArrayList;
 import java.util.List;

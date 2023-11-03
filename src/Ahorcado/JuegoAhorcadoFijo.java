@@ -1,4 +1,4 @@
-package jeffahorcado;
+package Ahorcado;
 
 import java.awt.Graphics;
 import javax.swing.JOptionPane;
@@ -8,9 +8,10 @@ class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
 
     public JuegoAhorcadoFijo(String palabraSecreta) {
         this.palabraSecreta = palabraSecreta.toLowerCase();
+        this.intentos = 6;
         inicializarPalabraSecreta();
 //      this.palabraActual = "_".repeat(palabraSecreta.length());
-        this.intentos = 6;
+        
     }
 
     public void inicializarPalabraSecreta() {
@@ -24,17 +25,17 @@ class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
     public void jugar() {
         System.out.println(palabraSecreta);
         while (intentos > 0) {
-            String palabradeshebrada = "";
+            String lineas = "";
             for (int i = 0; i < palabraActual.length(); i++) {
-                palabradeshebrada += palabraActual.charAt(i) + " ";
+                lineas += palabraActual.charAt(i) + " ";
             }
-            String prueba;
+            String caracter;
             do {
-                prueba = JOptionPane.showInputDialog(null, "Ingrese la letra que desea probar\nPista: " + palabradeshebrada + "\nIntentos restantes: " + intentos, "Ahorcado Fijo", JOptionPane.INFORMATION_MESSAGE);
-            } while (prueba == null);
-            prueba = prueba.toLowerCase();
-            if (!prueba.equals("")) {
-                char letra = prueba.charAt(0);
+                caracter = JOptionPane.showInputDialog(null, "Ingrese un caracter\nCantidad de caracteres" + lineas + "\nIntentos restantes: " + intentos, "AHORCADO FIJO", JOptionPane.INFORMATION_MESSAGE);
+            } while (caracter == null);
+            caracter = caracter.toLowerCase();
+            if (!caracter.equals("")) {
+                char letra = caracter.charAt(0);
                 actualizarPalabraActual(letra);
                 if (hasGanado() == true && intentos > 0) {
                     JOptionPane.showMessageDialog(null, "¡FELICIDADES, HAS GANADO!");

@@ -1,7 +1,7 @@
-package jeffahorcado;
+package Ahorcado;
 
 import javax.swing.JOptionPane;
-import static jeffahorcado.FramePalabraFija.palabraDef;
+import static Ahorcado.FramePalabraFija.palabraDef;
 
 public class playAhorcado extends javax.swing.JFrame {
 

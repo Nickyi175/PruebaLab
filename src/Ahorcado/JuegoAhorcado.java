@@ -1,4 +1,4 @@
-package jeffahorcado;
+package Ahorcado;
 
 //LISTO
 interface JuegoAhorcado {

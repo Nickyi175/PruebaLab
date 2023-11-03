@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pruebaahorcado;
+package Ahorcado;
 
-//import Juego.InicializarPalabrasFijo;
 
 public class Menu extends javax.swing.JFrame {
     /**
@@ -144,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AhorcadoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AhorcadoFijoActionPerformed
-        JuegoAhorcadoFijo AhorcadoFijoJuego= new JuegoAhorcadoFijo(InicializarPalabrasFijo.palabraDef);
+        JuegoAhorcadoFijo AhorcadoFijoJuego= new JuegoAhorcadoFijo(FramePalabraFija.palabraDef);
         AhorcadoFijoJuego.jugar();
     }//GEN-LAST:event_AhorcadoFijoActionPerformed
 
@@ -153,13 +152,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void InicializarPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicializarPalabrasActionPerformed
-        InicializarPalabrasFijo inicializar = new InicializarPalabrasFijo();
+        FramePalabraFija inicializar = new FramePalabraFija();
         inicializar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicializarPalabrasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AgregarPalabras agregarPalabras = new AgregarPalabras();
+        FrameAgregarPalabras agregarPalabras = new FrameAgregarPalabras();
         agregarPalabras.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -192,6 +191,10 @@ public class Menu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

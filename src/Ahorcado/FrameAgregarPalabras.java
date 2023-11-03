@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pruebaahorcado;
+package Ahorcado;
 
 import javax.swing.JOptionPane;
 
@@ -10,13 +10,14 @@ import javax.swing.JOptionPane;
  *
  * @author dell
  */
-public class InicializarPalabrasFijo extends javax.swing.JFrame {   
-    public static String palabraDef;
+public class FrameAgregarPalabras extends javax.swing.JFrame {
+
     /**
-     * Creates new form InicializarPalabrasFijo
+     * Creates new form AgregarPalabras
      */
-    public InicializarPalabrasFijo() {
+    public FrameAgregarPalabras() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -96,7 +97,8 @@ public class InicializarPalabrasFijo extends javax.swing.JFrame {
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
         String  palabra=palabraField.getText();
-        palabraDef=palabra;
+         AdminPalabrasSecretas adminPalabrasSecretas = new AdminPalabrasSecretas();
+         adminPalabrasSecretas.agregarPalabra(palabra.toUpperCase());
         JOptionPane.showMessageDialog(null, "La palabra se ha establecido correctamente.  ");
         Menu menu = new Menu();
         menu.setVisible(true);
@@ -112,7 +114,52 @@ public class InicializarPalabrasFijo extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrameAgregarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrameAgregarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrameAgregarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrameAgregarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameAgregarPalabras().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptar;
