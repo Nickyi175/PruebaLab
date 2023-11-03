@@ -29,6 +29,9 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
     }
 
     public void jugar() {
+        if(palabrasPosibles==null){
+            System.out.println("Lista vacia");
+        }else{
         while (intentos > 0) {
             String palabradeshebrada = "";
             for (int i = 0; i < palabraActual.length(); i++) {
@@ -48,7 +51,7 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
                 JOptionPane.showMessageDialog(null, "Oh no... perdiste...");
             }
         }
-
+        }
     }
     
 //antes era String
