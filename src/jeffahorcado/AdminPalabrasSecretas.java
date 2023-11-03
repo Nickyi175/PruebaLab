@@ -1,19 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package jeffahorcado;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- * @author aleja
- */
+//APARENTEMENTE LISTO, REVISAR
 public class AdminPalabrasSecretas {
-    private List<String> palabrasSecretas;
+    static ArrayList<String> palabrasSecretas;
+//    private List<String> palabrasSecretas;
 
     public AdminPalabrasSecretas() {
         palabrasSecretas = new ArrayList<>();
@@ -32,4 +26,15 @@ public class AdminPalabrasSecretas {
         int indice = random.nextInt(palabrasSecretas.size());
         return palabrasSecretas.get(indice);
     }
+    public static ArrayList getpalabrasSecretas(){
+        return palabrasSecretas;
+    }
+    /*
+    public static ArrayList getpalabrasSecretas(){
+        return palabrasSecretas;
+    }
+    
+    ESTO PODRIA FUNCIOANR
+    */
+
 }
