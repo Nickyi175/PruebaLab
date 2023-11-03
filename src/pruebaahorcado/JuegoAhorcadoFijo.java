@@ -7,27 +7,27 @@ import javax.swing.WindowConstants;
 public class JuegoAhorcadoFijo extends JuegoAhorcadoBase{
     
     public JuegoAhorcadoFijo(String palabrasecreta){
-        this.palabrasecreta=palabrasecreta.toUpperCase();
+        this.palabraSecreta=palabrasecreta.toUpperCase();
         inicializarPalabraSecreta();
         intentos=6;
     }
     
     public void actualizarPalabraActual(char letra){
-        char[] palabrareemplazar = palabraactual.toCharArray();
+        char[] palabrareemplazar = palabraActual.toCharArray();
         if(verificarLetra(letra)==true){
-            for(int i=0; i<palabrasecreta.toCharArray().length;i++){
-                if(palabrasecreta.toCharArray()[i]==letra){
+            for(int i=0; i<palabraSecreta.toCharArray().length;i++){
+                if(palabraSecreta.toCharArray()[i]==letra){
                     palabrareemplazar[i]=letra;
                 }
             }
-            palabraactual = new String(palabrareemplazar);
+            palabraActual = new String(palabrareemplazar);
         } else{
             intentos-=1;
         }
     }
     
     public boolean verificarLetra(char letra){
-        for(char letraverificar: palabrasecreta.toCharArray()){
+        for(char letraverificar: palabraSecreta.toCharArray()){
             if(letraverificar==letra){
                 return true;
             }
@@ -36,14 +36,14 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase{
     }
     
     public void inicializarPalabraSecreta(){
-        palabraactual="";
-        for(int i=0; i<palabrasecreta.length();i++){
-            palabraactual+="_";
+        palabraActual="";
+        for(int i=0; i<palabraSecreta.length();i++){
+            palabraActual+="_";
         }
     }
     
     public boolean hasGanado(){
-        if(palabraactual.equals(palabrasecreta)){
+        if(palabraActual.equals(palabraSecreta)){
             return true;
         }
         return false;
@@ -52,8 +52,8 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase{
     public void jugar(){
         while(intentos>0){
             String palabradeshebrada="";
-            for(int i=0;i<palabraactual.length();i++){
-                palabradeshebrada+=palabraactual.charAt(i)+" ";
+            for(int i=0;i<palabraActual.length();i++){
+                palabradeshebrada+=palabraActual.charAt(i)+" ";
             }
             String prueba;
             do{
