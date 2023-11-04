@@ -404,13 +404,18 @@ public class playAhorcado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AhorcadoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AhorcadoFijoActionPerformed
+        try {
+        PanePalabraAzar.setVisible(false);
+        PanelAhorcadoFijo.setVisible(false);
+        PanelPalabraFija.setVisible(false);
+        PanelahorcadoAzar.setVisible(false);
         System.out.println(palabraDef);
         AhorcadoFijoJuego = new JuegoAhorcadoFijo(palabraDef);
         AhorcadoFijoJuego.jugar();
-//        PanePalabraAzar.setVisible(false);
-//        PanelAhorcadoFijo.setVisible(true);
-//        PanelPalabraFija.setVisible(false);
-//        PanelahorcadoAzar.setVisible(false);
+//        
+        } catch (NullPointerException  e) {
+            JOptionPane.showMessageDialog(null, "No hay palabras disponibles, Agregar palabras antes de jugar ");
+        } 
     }//GEN-LAST:event_AhorcadoFijoActionPerformed
 
     private void InicializarPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicializarPalabrasActionPerformed
@@ -434,13 +439,19 @@ public class playAhorcado extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarpalabrasAzarActionPerformed
 
     private void JugarAhorcadoAlAzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugarAhorcadoAlAzarActionPerformed
-//        PanePalabraAzar.setVisible(false);
-//        PanelAhorcadoFijo.setVisible(false);
-//        PanelPalabraFija.setVisible(false);
-//        PanelahorcadoAzar.setVisible(true);
+        try {
+            
+        
+        PanePalabraAzar.setVisible(false);
+        PanelAhorcadoFijo.setVisible(false);
+        PanelPalabraFija.setVisible(false);
+        PanelahorcadoAzar.setVisible(false);
         JuegoAhorcadoAzar juegoAhorcadoAzar = new JuegoAhorcadoAzar(AdminPalabrasSecretas.getpalabrasSecretas());
         juegoAhorcadoAzar.jugar();
         System.out.println(AdminPalabrasSecretas.getpalabrasSecretas());
+        } catch (NullPointerException  e) {
+            JOptionPane.showMessageDialog(null, "No hay palabras disponibles, Agregar palabras antes de jugar ");
+        } 
     }//GEN-LAST:event_JugarAhorcadoAlAzarActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
